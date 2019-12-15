@@ -110,7 +110,8 @@ export EDITOR=vim
 unsetopt correct_all
 
 # Enable color for ls
-eval $(dircolors ~/.dircolors.256dark)
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+eval $(dircolors ~/.dircolors)
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 fpath=($(brew --prefix)/share/zsh-completions $fpath)
@@ -120,9 +121,6 @@ fpath=($(brew --prefix)/share/zsh-completions $fpath)
 # Go env
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
-
-# Other env
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 # Aliases
 alias vi='vim'
