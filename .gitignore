@@ -1,0 +1,63 @@
+# vim #
+
+*.swp
+*.swo
+
+# Emacs #
+###################
+.emacs.d/auto-save-list
+.emacs.d/backups/*
+.emacs.d/elpa/*
+.emacs.d/swank/*
+.emacs.d/.smex-items
+.emacs.d/places
+.emacs.d/eshell
+.emacs.d/url
+\#*#
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# IDE #
+# #####################
+*.iml
+.idea
+.idea_modules
+.classpath
+.project
+.settings
+.metadata
+
+# Go
+*.test
+
+# Amazon
+eclipse-bin
+
+# Commons
+tags

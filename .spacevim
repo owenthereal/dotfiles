@@ -1,0 +1,54 @@
+" Comment the following line if you don't want Vim and NeoVim to share the
+" same plugin download directory.
+let g:spacevim_plug_home = '~/.vim/plugged'
+
+" Uncomment the following line to override the leader key. The default value is space key "<\Space>".
+" let g:spacevim_leader = ','
+
+" Uncomment the following line to override the local leader key. The default value is comma ','.
+" let g:spacevim_localleader = "<\Space>"
+
+" Enable the existing layers in space-vim.
+" Refer to https://github.com/liuchengxu/space-vim/blob/master/layers/LAYERS.md for all available layers.
+let g:spacevim_layers = [
+      \ 'fzf', 'better-defaults', 'which-key', 'file-manager', 'tmux', 'ctrlp', 'text-align', 'go', 'ruby', 'git', 'github'
+      \ ]
+
+" Uncomment the following line if your terminal(-emulator) supports true colors.
+let g:spacevim_enable_true_color = 1
+
+" Uncomment the following if you have some nerd font installed.
+let g:spacevim_nerd_fonts = 1
+
+" If you want to have more control over the layer, try using Layer command.
+" if g:spacevim.gui
+"   Layer 'airline'
+" endif
+
+" Manage your own plugins.
+" Refer to https://github.com/junegunn/vim-plug for more detials.
+function! UserInit()
+
+  " Add your own plugin via Plug command.
+  Plug 'flazz/vim-colorschemes'
+
+endfunction
+
+" Override the default settings from space-vim as well as adding extras
+function! UserConfig()
+
+  " Override the default settings.
+  " Uncomment the following line to disable relative number.
+  set norelativenumber
+
+  " Adding extras.
+  " Uncomment the following line If you have installed the powerline fonts.
+  " It is good for airline layer.
+  " let g:airline_powerline_fonts = 1
+  set background=dark
+  colorscheme ir_black
+
+  let g:go_fmt_command = "goimports"
+  let g:go_auto_sameids = 1
+  let g:go_auto_type_info = 1
+endfunction
