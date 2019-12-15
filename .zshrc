@@ -109,6 +109,10 @@ export EDITOR=vim
 # Turn off oh-my-zsh auto-correct
 unsetopt correct_all
 
+# Enable color for ls
+eval $(dircolors ~/.dircolors.256dark)
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 fpath=($(brew --prefix)/share/zsh-completions $fpath)
 [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
