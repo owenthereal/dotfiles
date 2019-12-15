@@ -5,4 +5,5 @@
 - https://rubygems.org/
 :update_sources: true
 :verbose: true
-gem: "--no-ri --no-rdoc"
+:concurrent_downloads: 8
+gem: "--no-document"

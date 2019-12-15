@@ -122,6 +122,9 @@ fpath=($(brew --prefix)/share/zsh-completions $fpath)
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
 
+# Ruby
+eval "$(rbenv init -)"
+
 # Aliases
 alias vi='vim'
 alias git='hub'
