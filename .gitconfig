@@ -18,7 +18,7 @@
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
   track = checkout -t
   who = shortlog -s --
-	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [status]
   submodule = 1
 [push]
@@ -60,17 +60,9 @@
   prompt = false
 [help]
   autocorrect = 1
-
-;[credential]
-	;helper = /opt/boxen/bin/boxen-git-credential
-
 [hub]
   protocol = https
 
-[gh]
-  protocol = https
-[amazon]
-	append-cr-url = true
 [merge]
 	tool = opendiff
 [filter "lfs"]
