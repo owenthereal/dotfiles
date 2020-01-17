@@ -125,15 +125,19 @@ export PATH=$GOPATH/bin:$PATH
 # Ruby
 eval "$(rbenv init -)"
 
+# Node
+eval "$(nodenv init -)"
+
 # Aliases
 alias vi='vim'
-alias git='hub'
+alias g='hub'
 alias k='kubectl'
 
 # Heroku
 alias h="heroku"
 alias hs="heroku sudo --reason reasons"
 alias ic="ion-client"
+alias cat="bat"
 
 cloud() {
   eval "$(ion-client shell)"
