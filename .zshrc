@@ -118,6 +118,9 @@ fpath=($(brew --prefix)/share/zsh-completions $fpath)
 [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Upterm Prompt
+PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$PROMPT"
+
 # Go env
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
@@ -143,3 +146,13 @@ cloud() {
   eval "$(ion-client shell)"
   cloud "$@"
 }
+
+export PATH=$PATH:/usr/local/kubebuilder/bin
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+export PATH="${PATH}:${HOME}/.krew/bin"
+export PATH="${PATH}:${HOME}/.flutter/bin"
+
+export GPG_TTY=$(tty)
