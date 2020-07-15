@@ -61,3 +61,7 @@ eclipse-bin
 
 # Commons
 tags
+
+.terraform
+*.tfstate
+*.tfstate.backup
