@@ -98,61 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Custom settings
-
-export EDITOR=vim
-
-# zsh
-
-# Turn off oh-my-zsh auto-correct
-unsetopt correct_all
-
-# Enable color for ls
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-eval $(dircolors ~/.dircolors)
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
-[ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Upterm Prompt
-PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$PROMPT"
-
-# Go env
-export GOPATH=$HOME/code
-export PATH=$GOPATH/bin:$PATH
-
-# Ruby
-eval "$(rbenv init -)"
-
-# Node
-eval "$(nodenv init -)"
-
-# Aliases
-alias vi='vim'
-alias g='hub'
-alias k='kubectl'
-
-# Heroku
-alias h="heroku"
-alias hs="heroku sudo --reason reasons"
-alias ic="ion-client"
-alias cat="bat"
-
-cloud() {
-  eval "$(ion-client shell)"
-  cloud "$@"
-}
-
-export PATH=$PATH:/usr/local/kubebuilder/bin
-
-export WASMTIME_HOME="$HOME/.wasmtime"
-
-export PATH="$WASMTIME_HOME/bin:$PATH"
-export PATH="${PATH}:${HOME}/.krew/bin"
-export PATH="${PATH}:${HOME}/.flutter/bin"
-
-export GPG_TTY=$(tty)
+os="$(uname -s)"
+case "${os}" in
+    Linux*) source $HOME/.zshrc.linux;;
+    Darwin*) source $HOME/.zshrc.darwin;;
+    *) echo "Unknown support OS: ${os}"
+esac
