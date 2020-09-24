@@ -3,6 +3,7 @@
 # Custom settings
 
 export EDITOR=vim
+export PATH="/usr/local/sbin:$PATH"
 
 # zsh
 
@@ -47,12 +48,11 @@ cloud() {
   cloud "$@"
 }
 
-export PATH=$PATH:/usr/local/kubebuilder/bin
+export PATH="/usr/local/kubebuilder/bin:${PATH}"
+export PATH="${HOME}/.krew/bin:${PATH}"
+export PATH="${HOME}/.flutter/bin:${PATH}"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
-
-export PATH="$WASMTIME_HOME/bin:$PATH"
-export PATH="${PATH}:${HOME}/.krew/bin"
-export PATH="${PATH}:${HOME}/.flutter/bin"
+export PATH="$WASMTIME_HOME/bin:${PATH}"
 
 export GPG_TTY=$(tty)

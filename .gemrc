@@ -2,6 +2,7 @@
 :backtrace: false
 :bulk_threshold: 1000
 :sources:
+- https://5f55f14886bb700783e028292616ee4f5c45410d195b55c5:@packagecloud.io/heroku/gemgate/
 - https://rubygems.org/
 :update_sources: true
 :verbose: true
