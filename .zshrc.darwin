@@ -26,6 +26,9 @@ PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$P
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
 
+# Rust env
+source $HOME/.cargo/env
+
 # Ruby
 eval "$(rbenv init -)"
 
