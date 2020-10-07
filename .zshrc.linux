@@ -22,8 +22,8 @@ export PATH=$HOME/.nodenv/bin:$PATH
 command -v nodenv > /dev/null 2>&1 && eval "$(nodenv init -)"
 
 # Aliases
-alias vi='vimx'
-alias vim='vimx'
+alias vi='nvim'
+alias vim='nvim'
 alias g='hub'
 alias k='kubectl'
 alias h="heroku"
