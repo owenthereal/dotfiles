@@ -17,6 +17,10 @@ PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$P
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
 
+# Rust env
+source $HOME/.cargo/env
+
+
 # nodenv
 export PATH=$HOME/.nodenv/bin:$PATH
 command -v nodenv > /dev/null 2>&1 && eval "$(nodenv init -)"
@@ -30,5 +34,5 @@ alias h="heroku"
 alias cat="bat"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
-GOVER=go1.15.2
-[ -f $GOPATH/bin/$GOVER ] && alias go=$GOVER
+
+export PATH=$HOME/bin:$PATH
