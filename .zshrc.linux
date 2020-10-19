@@ -1,6 +1,6 @@
 # Custom settings
 
-export EDITOR=vim
+export EDITOR=nvim
 
 # zsh
 

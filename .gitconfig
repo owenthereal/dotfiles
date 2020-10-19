@@ -1,71 +1,72 @@
 [user]
-  name = Owen Ou
-  email = o@owenou.com
+    name = Owen Ou
+    email = o@owenou.com
 [alias]
-  st = status
-  co = checkout
-  pom = push origin master
-  br = branch
-  ci = commit
-  rb = rebase
-  df = diff
-  lp = log -p
-  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-  lol = log --pretty=oneline --abbrev-commit --graph --decorate
-  unstage = reset HEAD
-  staged = diff --cached
-  unstaged = diff
-  current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
-  track = checkout -t
-  who = shortlog -s --
-  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    st = status
+    co = checkout
+    pom = push origin master
+    br = branch
+    ci = commit
+    rb = rebase
+    df = diff
+    lp = log -p
+    l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    unstage = reset HEAD
+    staged = diff --cached
+    unstaged = diff
+    current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+    track = checkout -t
+    who = shortlog -s --
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [status]
-  submodule = 1
+    submodule = 1
 [push]
-  default = current
+    default = current
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
-  interactive = auto
-  pager = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+    interactive = auto
+    pager = true
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [core]
-  pager = less -FRSX
-  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile = ~/.gitignore
-  editor = vim
+    pager = less -FRSX
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+    editor = vim
 [apply]
-  whitespace = warn
+    whitespace = warn
 [heroku]
-  account = jingweno
+    account = jingweno
 [branch]
-  autosetuprebase = always
+    autosetuprebase = always
 [mergetool]
-  keepbackup = false
-  keeptemporaries = false
-  prompt = false
+    keepbackup = false
+    keeptemporaries = false
+    prompt = false
 [help]
-  autocorrect = 1
+    autocorrect = 1
 [hub]
-  protocol = https
-
+    protocol = https
 [merge]
-	tool = opendiff
+    tool = opendiff
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    required = true
+[credential]
+	helper = cache
