@@ -37,3 +37,5 @@ alias pbpaste="xclip -selection clipboard -o"
 
 export PATH="$HOME/bin:$PATH"
 export DOCKER_HOST="unix:///run/user/$UID/docker.sock"
+
+eval "$(direnv hook zsh)"
