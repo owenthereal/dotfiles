@@ -19,7 +19,7 @@ export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
 
 # Rust env
-source $HOME/.cargo/env
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 
 
 # nodenv
