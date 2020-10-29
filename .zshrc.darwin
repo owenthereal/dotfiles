@@ -1,8 +1,7 @@
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Custom settings
 
-export EDITOR=vim
+export TERM=xterm-256color
+export EDITOR=nvim
 export PATH="/usr/local/sbin:$PATH"
 
 # zsh
@@ -27,7 +26,7 @@ export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
 
 # Rust env
-source $HOME/.cargo/env
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 
 # Ruby
 eval "$(rbenv init -)"
@@ -36,20 +35,13 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
 # Aliases
-alias vi='vim'
+alias vi='nvim'
 alias g='hub'
 alias k='kubectl'
 
 # Heroku
 alias h="heroku"
-alias hs="heroku sudo --reason reasons"
-alias ic="ion-client"
 alias cat="bat"
-
-cloud() {
-  eval "$(ion-client shell)"
-  cloud "$@"
-}
 
 export PATH="/usr/local/kubebuilder/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"
@@ -59,3 +51,5 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:${PATH}"
 
 export GPG_TTY=$(tty)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
