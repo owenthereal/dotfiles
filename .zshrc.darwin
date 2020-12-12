@@ -9,22 +9,27 @@ export PATH="/usr/local/sbin:$PATH"
 # Turn off oh-my-zsh auto-correct
 unsetopt correct_all
 
+BREW_PREFIX="$(brew --prefix)"
+export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="${BREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
+export PATH="${BREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="${BREW_PREFIX}/opt/grep/libexec/gnubin:$PATH"
+
 # Enable color for ls
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 eval $(dircolors ~/.dircolors)
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # zsh-completions
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+FPATH="${BREW_PREFIX}/share/zsh-completions:$FPATH"
 autoload -Uz compinit
 compinit
 
 # zsh-autosuggestions
-[ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 bindkey '^ ' autosuggest-accept
 
 # zsh-syntax-highlighting
-[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Upterm Prompt
 PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$PROMPT"
@@ -32,6 +37,9 @@ PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$P
 # Go env
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
+
+# Direnv
+eval "$(direnv hook zsh)"
 
 # Rust env
 [ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
@@ -51,7 +59,7 @@ alias k='kubectl'
 alias h="heroku"
 alias cat="bat"
 
-export PATH="/usr/local/kubebuilder/bin:${PATH}"
+export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"
 export PATH="${HOME}/.flutter/bin:${PATH}"
 
