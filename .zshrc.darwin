@@ -2,7 +2,8 @@
 
 export TERM=xterm-256color
 export EDITOR=nvim
-export PATH="/usr/local/sbin:$PATH"
+export VISUAL=nvim
+export PATH="/usr/local/sbin:${PATH}"
 
 # zsh
 
@@ -10,39 +11,41 @@ export PATH="/usr/local/sbin:$PATH"
 unsetopt correct_all
 
 BREW_PREFIX="$(brew --prefix)"
-export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="${BREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
-export PATH="${BREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="${BREW_PREFIX}/opt/grep/libexec/gnubin:$PATH"
+export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+export PATH="${BREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
+export PATH="${BREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
+export PATH="${BREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
+export PATH="${BREW_PREFIX}/opt/curl/bin:${PATH}"
+export PATH="${BREW_PREFIX}/opt/openjdk/bin:${PATH}"
 
 # Enable color for ls
 eval $(dircolors ~/.dircolors)
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # zsh-completions
-FPATH="${BREW_PREFIX}/share/zsh-completions:$FPATH"
+FPATH="${BREW_PREFIX}/share/zsh-completions:${FPATH}"
 autoload -Uz compinit
 compinit
 
 # zsh-autosuggestions
-[ -f "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[ -f "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 bindkey '^ ' autosuggest-accept
 
 # zsh-syntax-highlighting
-[ -f "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[ -f "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Upterm Prompt
-PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')$PROMPT"
+PROMPT="$([[ ! -z "${UPTERM_ADMIN_SOCKET}"  ]] && echo -e '\xF0\x9F\x86\x99 ')${PROMPT}"
 
 # Go env
-export GOPATH=$HOME/code
-export PATH=$GOPATH/bin:$PATH
+export GOPATH="${HOME}/code"
+export PATH="${GOPATH}/bin:${PATH}"
 
 # Direnv
 eval "$(direnv hook zsh)"
 
 # Rust env
-[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
+[ -f "${HOME}/.cargo/env" ] && source "${HOME}/.cargo/env"
 
 # Ruby
 eval "$(rbenv init -)"
@@ -54,10 +57,10 @@ eval "$(nodenv init -)"
 alias vi='nvim'
 alias g='hub'
 alias k='kubectl'
-
-# Heroku
-alias h="heroku"
 alias cat="bat"
+
+alias h="heroku"
+alias m='meroxa'
 
 export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"

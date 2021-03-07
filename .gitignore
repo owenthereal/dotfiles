@@ -52,6 +52,7 @@ Thumbs.db
 .project
 .settings
 .metadata
+.class
 
 # Go
 *.test
@@ -60,7 +61,7 @@ Thumbs.db
 eclipse-bin
 
 # Commons
-tags
+#tags
 
 # Terraform
 .terraform
@@ -70,3 +71,4 @@ tags
 .terraform.lock.hcl
 
 .envrc
+.vscode
