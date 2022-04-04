@@ -65,6 +65,7 @@ alias m='meroxa'
 export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"
 export PATH="${HOME}/.flutter/bin:${PATH}"
+export PATH="${HOME}/.pub-cache/bin:${PATH}"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:${PATH}"
