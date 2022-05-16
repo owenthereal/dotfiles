@@ -36,8 +36,16 @@ alias cat="bat"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
 
+autoload -Uz compinit
+compinit
+
+# zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
+
 export PATH="$HOME/bin:$PATH"
 #Rootless Docker
 #export DOCKER_HOST="unix:///run/user/$UID/docker.sock"
 
 eval "$(direnv hook zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
