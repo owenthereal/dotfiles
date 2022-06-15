@@ -32,6 +32,7 @@ function! UserInit()
   " Add your own plugin via Plug command.
   Plug 'flazz/vim-colorschemes'
   Plug 'tpope/vim-rhubarb'
+  Plug 'hashivim/vim-terraform'
 
 endfunction
 

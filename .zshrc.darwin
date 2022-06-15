@@ -18,6 +18,9 @@ export PATH="${BREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
 export PATH="${BREW_PREFIX}/opt/curl/bin:${PATH}"
 export PATH="${BREW_PREFIX}/opt/openjdk/bin:${PATH}"
 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export ANDROID_NDK_HOME="${BREW_PREFIX}/share/android-ndk"
+
 # Enable color for ls
 eval $(dircolors ~/.dircolors)
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -66,6 +69,9 @@ export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"
 export PATH="${HOME}/.flutter/bin:${PATH}"
 export PATH="${HOME}/.pub-cache/bin:${PATH}"
+export PATH="${HOME}/bin/google-cloud-sdk/bin:${PATH}"
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:${PATH}"
