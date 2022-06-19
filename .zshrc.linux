@@ -2,6 +2,7 @@
 
 export TERM=xterm-256color
 export EDITOR=nvim
+export GPG_TTY=$(tty)
 
 # zsh
 
@@ -42,7 +43,9 @@ compinit
 # zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 
-export PATH="$HOME/bin:$PATH"
+export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/.krew/bin:${PATH}"
+
 #Rootless Docker
 #export DOCKER_HOST="unix:///run/user/$UID/docker.sock"
 

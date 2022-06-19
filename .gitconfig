@@ -1,6 +1,7 @@
 [user]
     name = Owen Ou
     email = o@owenou.com
+    signingkey = 6CDA9490BEB1E446
 [alias]
     st = status
     co = checkout
@@ -72,3 +73,5 @@
 	helper = store
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true
