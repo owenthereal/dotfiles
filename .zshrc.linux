@@ -46,6 +46,10 @@ bindkey '^ ' autosuggest-accept
 export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"
 
+# fly.io
+export FLYCTL_INSTALL="/home/owen/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
 #Rootless Docker
 #export DOCKER_HOST="unix:///run/user/$UID/docker.sock"
 
