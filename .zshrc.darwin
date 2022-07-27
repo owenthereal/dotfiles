@@ -58,6 +58,7 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
 # Aliases
+alias ls='ls --color=auto'
 alias vi='nvim'
 alias g='hub'
 alias k='kubectl'
