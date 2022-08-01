@@ -50,6 +50,8 @@ export PATH="${HOME}/.krew/bin:${PATH}"
 export FLYCTL_INSTALL="/home/owen/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+
 #Rootless Docker
 #export DOCKER_HOST="unix:///run/user/$UID/docker.sock"
 

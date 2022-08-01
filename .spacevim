@@ -33,6 +33,7 @@ function! UserInit()
   Plug 'flazz/vim-colorschemes'
   Plug 'tpope/vim-rhubarb'
   Plug 'hashivim/vim-terraform'
+  Plug 'rust-lang/rust.vim'
 
 endfunction
 
