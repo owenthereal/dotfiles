@@ -11,7 +11,7 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 " Enable the existing layers in space-vim.
 " Refer to https://github.com/liuchengxu/space-vim/blob/master/layers/LAYERS.md for all available layers.
 let g:spacevim_layers = [
-      \ 'fzf', 'better-defaults', 'which-key', 'file-manager', 'editing', 'tmux', 'ctrlp', 'text-align', 'go', 'ruby', 'rust', 'git', 'github'
+      \ 'fzf', 'better-defaults', 'which-key', 'file-manager', 'editing', 'tmux', 'ctrlp', 'text-align', 'go', 'ruby', 'rust', 'markdown', 'git', 'github'
       \ ]
 
 " Uncomment the following line if your terminal(-emulator) supports true colors.
@@ -33,8 +33,6 @@ function! UserInit()
   Plug 'flazz/vim-colorschemes'
   Plug 'tpope/vim-rhubarb'
   Plug 'hashivim/vim-terraform'
-  Plug 'rust-lang/rust.vim'
-
 endfunction
 
 " Override the default settings from space-vim as well as adding extras
@@ -57,6 +55,13 @@ function! UserConfig()
   nnoremap gb :GoBuildTags ''<cr>
   let g:go_fmt_command = "goimports"
   let g:NERDTreeMinimalMenu=1
+  autocmd FileType go nmap <leader>ot  <Plug>(go-test)
+  autocmd FileType go nmap <leader>ob  <Plug>(go-build)
+  autocmd FileType go nmap <Leader>oi <Plug>(go-info)
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
   " let g:go_auto_sameids = 1
   " let g:go_auto_type_info = 1
 endfunction
