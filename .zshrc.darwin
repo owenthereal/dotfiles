@@ -55,12 +55,9 @@ eval "$(direnv hook zsh)"
 # Aliases
 alias ls='ls --color=auto'
 alias vi='nvim'
-alias g='hub'
+alias g='git'
 alias k='kubectl'
 alias cat="bat"
-
-alias h="heroku"
-alias m='meroxa'
 
 export PATH="${HOME}/bin:${PATH}"
 export PATH="${HOME}/.krew/bin:${PATH}"
@@ -78,7 +75,7 @@ export GPG_TTY=$(tty)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # goup
-source "$HOME/.go/env"
+[ -f ~/.go/env ] && source "~/.go/env"
 
 # asdf
 source $(brew --prefix asdf)/libexec/asdf.sh
