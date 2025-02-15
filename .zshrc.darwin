@@ -78,4 +78,4 @@ export GPG_TTY=$(tty)
 [ -f ~/.go/env ] && source "~/.go/env"
 
 # asdf
-source $(brew --prefix asdf)/libexec/asdf.sh
+export PATH="${HOME}/.asdf/shims:$PATH"
