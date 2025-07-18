@@ -24,6 +24,8 @@
   dark = true
   line-numbers = true
   side-by-side = true
+  hyperlinks = true
+  hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 [diff]
 	algorithm = histogram
 	colorMoved = zebra
