@@ -1,82 +1,109 @@
 [user]
-    name = Owen Ou
-    email = o@owenou.com
-    signingkey = 6CDA9490BEB1E446
-[alias]
-    st = status
-    co = checkout
-    pom = push origin master
-    br = branch
-    ci = commit
-    rb = rebase
-    df = diff
-    lp = log -p
-    l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-    lol = log --pretty=oneline --abbrev-commit --graph --decorate
-    unstage = reset HEAD
-    staged = diff --cached
-    unstaged = diff
-    current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
-    track = checkout -t
-    who = shortlog -s --
-    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
-[status]
-    submodule = 1
-[push]
-    default = current
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
-    interactive = auto
-    pager = true
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
-[core]
-	pager = less -r
-    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    excludesfile = ~/.gitignore
-    editor = nvim
-[apply]
-    whitespace = warn
-[heroku]
-    account = jingweno
-[branch]
-    autosetuprebase = always
-[mergetool]
-    keepbackup = false
-    keeptemporaries = false
-    prompt = false
-[help]
-    autocorrect = 1
-[hub]
-    protocol = https
-[merge]
-    tool = opendiff
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    required = true
-    process = git-lfs filter-process
-[credential]
-	helper = store
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[pull]
-	rebase = true
+  name = Owen Ou
+  email = o@owenou.com
+  signingkey = 36990B3360A63E7CAC081A3C6CDA9490BEB1E446
+[gpg]
+  program = gpg
+  fotmat = opengpg
 [commit]
-	gpgsign = true
-[credential "https://dev.azure.com"]
-	useHttpPath = true
+  gpgsign = true
+[tag]
+  gpgsign = true
+[core]
+  editor = nvim
+  pager = less -r
+  excludesfile = ~/.gitignore
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf = input            # safer cross-platform text normalization
+	safecrlf = warn
+[diff]
+	algorithm = histogram
+	colorMoved = zebra
+	indentHeuristic = true
+	renames = true
+[merge]
+  tool = opendiff
+  conflictstyle = zdiff3
+[mergetool]
+  keepbackup = false
+  keeptemporaries = false
+  prompt = false
+[rebase]
+  autosquash = true            # respects fixup!/squash!
+  autostash = true             # stash dirty work before rebase; auto-apply after
+  updateRefs = true            # update branches that point to rebased commits
+  abbreviateCommands = true
+[pull]
+  rebase = true
+  ff = only                    # fail if merge needed; keeps history linear
+[push]
+  default = current
+  autoSetupRemote = true       # auto-set upstream on first push (Git ≥2.37)
+  followTags = true            # push tags reachable from pushed commits
+[fetch]
+  prune = true                 # prune tracking refs deleted on remote
+  writeCommitGraph = true
+[rerere]
+  enabled = true               # reuse recorded conflict resolutions
+[status]
+  submodule = 1
+[alias]
+  st = status
+  co = checkout
+  pom = push origin master
+  br = branch
+  ci = commit
+  rb = rebase
+  df = diff
+  lp = log -p
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  unstage = reset HEAD
+  staged = diff --cached
+  unstaged = diff
+  current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+  track = checkout -t
+  who = shortlog -s --
+  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+[color]
+  ui = true
+  interactive = auto
+  pager = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[apply]
+  whitespace = warn
+[heroku]
+  account = jingweno
+[branch]
+  autosetuprebase = always
+[help]
+  autocorrect = 1
+[hub]
+  protocol = https
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
+[credential]
+  helper = /usr/local/share/gcm-core/git-credential-manager
+[branch]
+	autosetuprebase = always
+[init]
+  defaultBranch = main
+[includeIf "gitdir:~/personal/"]
+  path = .gitconfig_personal
+[includeIf "gitdir:~/oss/"]
+  path = .gitconfig_oss
