@@ -23,7 +23,7 @@
   navigate = true
   dark = true
   line-numbers = true
-  side-by-side = true
+  side-by-side = false
   hyperlinks = true
   hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 [diff]
