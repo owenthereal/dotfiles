@@ -72,4 +72,4 @@ eclipse-bin
 
 .envrc
 .vscode
-CLAUDE.md
+.claude/settings.local.json
