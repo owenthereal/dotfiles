@@ -75,7 +75,7 @@ export GPG_TTY=$(tty)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # goup
-[ -f ~/.go/env ] && source "~/.go/env"
+#[ -f ~/.go/env ] && source "~/.go/env"
 
 # asdf
 export PATH="${HOME}/.asdf/shims:$PATH"
