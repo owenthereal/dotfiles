@@ -1,0 +1,170 @@
+# Environment
+[env]
+TERM = "xterm-256color"
+
+# Shell
+[terminal.shell]
+program = "/opt/homebrew/bin/zsh"
+
+# Window settings
+[window]
+padding.x = 16
+padding.y = 14
+decorations = "None"
+opacity = 0.98
+option_as_alt = "Both"
+dynamic_title = true
+startup_mode = "Windowed"
+
+# Font configuration
+[font]
+size = 15
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+# Colors (Tokyo Night theme)
+[colors.primary]
+background = '#1a1b26'
+foreground = '#a9b1d6'
+dim_foreground = '#828bb8'
+
+[colors.normal]
+black = '#32344a'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#ad8ee6'
+cyan = '#449dab'
+white = '#787c99'
+
+[colors.bright]
+black = '#444b6a'
+red = '#ff7a93'
+green = '#b9f27c'
+yellow = '#ff9e64'
+blue = '#7da6ff'
+magenta = '#bb9af7'
+cyan = '#0db9d7'
+white = '#acb0d0'
+
+[colors.dim]
+black = '#1d202f'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#ad8ee6'
+cyan = '#449dab'
+white = '#787c99'
+
+[colors.selection]
+background = '#7aa2f7'
+text = '#1a1b26'
+
+[colors.search]
+matches = { foreground = '#1a1b26', background = '#e0af68' }
+focused_match = { foreground = '#1a1b26', background = '#ff9e64' }
+
+# Scrolling
+[scrolling]
+history = 50000
+multiplier = 3
+
+# Cursor
+[cursor]
+style.shape = "Block"
+style.blinking = "On"
+blink_interval = 500
+unfocused_hollow = true
+
+# Mouse
+[mouse]
+hide_when_typing = true
+
+# Key bindings
+[[keyboard.bindings]]
+key = "F11"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Super"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bb"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bf"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Super"
+chars = "\u001bOH"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Super"
+chars = "\u001bOF"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Super"
+chars = "\u0015"
+
+[[keyboard.bindings]]
+key = "Delete"
+mods = "Alt"
+chars = "\u001bd"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Super"
+action = "ClearHistory"
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Super"
+action = "Quit"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Super"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Super"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Super"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Super"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Super"
+action = "ResetFontSize"
